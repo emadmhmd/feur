@@ -1,0 +1,44 @@
+$color:#282c34;
+$sec-color: #fff;
+
+/* Framework Part */
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+  min-height: 100vh;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // justify-content: space-between;
+  padding: 10px;
+  background-color: $color;
+  color: $sec-color;
+}
+.header {
+  overflow: hidden;
+  padding-left: 20%;
+  padding-top: 20px;
+}
+.header .title{
+  float: left;
+  width: 60%;
+}
+.header .nav {
+  float: left;
+  width: 30%;
+}
+
+.msg{
+  width: 40%;
+  margin-left: 30%;
+  text-align: center;
+  margin-top: 20px;
+}
