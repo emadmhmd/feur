@@ -93,5 +93,5 @@ function SignUpModal({
 }
 
 export default connect(null, {
-  signIn: userAction.signInAction,
+  signIn: userAction.signIn,
 })(SignUpModal);

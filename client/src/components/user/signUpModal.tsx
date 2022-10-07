@@ -122,5 +122,5 @@ function SignUpModal({
 }
 
 export default connect(null, {
-  signUp: userAction.signUpAction,
+  signUp: userAction.signUp,
 })(SignUpModal);

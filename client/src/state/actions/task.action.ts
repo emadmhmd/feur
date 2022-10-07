@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable class-methods-use-this */
 import { Dispatch } from 'redux';
 import { taskApi } from '../../api';
@@ -5,8 +6,8 @@ import { statusAction, getAction } from '.';
 import { taskType } from '../../types/domain';
 import { TASKS_GOT } from './action.d';
 
-class User {
-  createAction = (task: taskType) => async (dispatch: Dispatch) => {
+class Task {
+  create = (task: taskType) => async (dispatch: Dispatch) => {
     try {
       dispatch(statusAction.clearStatus());
       const { data: { msg } } = await taskApi.create(task);
@@ -18,7 +19,7 @@ class User {
     }
   };
 
-  updateAction = (id: string, task: taskType) => async (dispatch: Dispatch) => {
+  update = (id: string, task: taskType) => async (dispatch: Dispatch) => {
     try {
       dispatch(statusAction.clearStatus());
       const { data: { msg } } = await taskApi.update(id, task);
@@ -30,7 +31,7 @@ class User {
     }
   };
 
-  deleteAction = (id: string) => async (dispatch: Dispatch) => {
+  delete = (id: string) => async (dispatch: Dispatch) => {
     try {
       dispatch(statusAction.clearStatus());
       const { data: { msg } } = await taskApi.delete(id);
@@ -42,7 +43,7 @@ class User {
     }
   };
 
-  getAllAction = () => async (dispatch: Dispatch) => {
+  getAll = () => async (dispatch: Dispatch) => {
     try {
       dispatch(statusAction.clearStatus());
       dispatch(getAction.gettingTime());
@@ -57,4 +58,4 @@ class User {
   };
 }
 
-export default new User();
+export default new Task();

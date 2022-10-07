@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable class-methods-use-this */
 import { Dispatch } from 'redux';
 import { userApi, setAuthHeader } from '../../api';
@@ -8,7 +9,7 @@ import { SIGNIN_SUCCESS, PROFILE_GOT, LOGOUT_SUCCESS } from './action.d';
 const TOKEN_NAME = 'feur_todo_app_token';
 
 class User {
-  signUpAction = (user: userType) => async (dispatch: Dispatch) => {
+  signUp = (user: userType) => async (dispatch: Dispatch) => {
     try {
       dispatch(statusAction.clearStatus());
       const { data: { msg } } = await userApi.signup(user);
@@ -18,7 +19,7 @@ class User {
     }
   };
 
-  signInAction = (user: userType) => async (dispatch: Dispatch) => {
+  signIn = (user: userType) => async (dispatch: Dispatch) => {
     try {
       dispatch(statusAction.clearStatus());
 
@@ -36,7 +37,7 @@ class User {
     }
   };
 
-  getProfileAction = () => async (dispatch: Dispatch) => {
+  getProfile = () => async (dispatch: Dispatch) => {
     try {
       dispatch(statusAction.clearStatus());
 
@@ -71,7 +72,7 @@ class User {
     }
   };
 
-  logoutAction = () => async (dispatch: Dispatch) => {
+  logout = () => async (dispatch: Dispatch) => {
     try {
       dispatch(statusAction.clearStatus());
       localStorage.clear();

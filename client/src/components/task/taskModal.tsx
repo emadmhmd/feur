@@ -79,5 +79,5 @@ function TaskModal({
 }
 
 export default connect(null, {
-  create: taskAction.createAction,
+  create: taskAction.create,
 })(TaskModal);

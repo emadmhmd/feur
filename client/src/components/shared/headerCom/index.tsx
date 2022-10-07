@@ -9,19 +9,19 @@ import { userAction } from '../../../state/actions';
 
 type propsType = {
   isAuth: boolean,
-  logoutAction: any,
+  logout(): void,
 }
 
-function Header({ isAuth, logoutAction }: propsType) {
-  function logout() {
-    logoutAction();
+function Header({ isAuth, logout }: propsType) {
+  function logoutUser() {
+    logout();
   }
 
   return (
     <header className="header">
       <h1 className="title">Feur TODO </h1>
       <nav className="nav">
-        {isAuth ? <Button onClick={logout}>Logout</Button> : (
+        {isAuth ? <Button onClick={logoutUser}>Logout</Button> : (
           <>
             <SignUp />
             <SignIn />
@@ -37,5 +37,5 @@ const mapStateToProps = ({ userReducer }: storeType) => ({
 });
 
 export default connect(mapStateToProps, {
-  logoutAction: userAction.logoutAction,
+  logout: userAction.logout,
 })(Header);

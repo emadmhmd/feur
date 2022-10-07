@@ -41,6 +41,6 @@ const mapStateToProps = ({ taskReducer }: storeType) => ({
 });
 
 export default connect(mapStateToProps, {
-  getAll: taskAction.getAllAction,
-  deleteAction: taskAction.deleteAction,
+  getAll: taskAction.getAll,
+  deleteTask: taskAction.delete,
 })(TaskList);

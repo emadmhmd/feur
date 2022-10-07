@@ -79,5 +79,5 @@ function TaskUpdateModal({
 }
 
 export default connect(null, {
-  update: taskAction.updateAction,
+  update: taskAction.update,
 })(TaskUpdateModal);
