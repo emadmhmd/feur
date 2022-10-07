@@ -27,7 +27,7 @@ function TaskModal({
   }
 
   const validationSchema = Yup.object().shape({
-    task: Yup.string().typeError('Please Type the tasktask').required('Please Type the email'),
+    task: Yup.string().typeError('Please Type the task').required('Please Type the email'),
   });
 
   const formik = useFormik({

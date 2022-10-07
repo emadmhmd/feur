@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-no-bind */
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
@@ -40,7 +41,6 @@ function SignUpModal({
     onSubmit: async (values: userType) => {
       await signIn({ ...values });
       toggle();
-      // setPicture('');
     },
   });
 
