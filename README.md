@@ -9,6 +9,8 @@ Simple TODO APP
     - [Prerequisites](#prerequisites)
     - [Configuration](#configuration)
     - [Run instructions](#run-instructions)
+  - [Docker](#docker)
+    - [Not Tested yet](#not-tested-yet)
 
 ## Development
 
@@ -103,3 +105,7 @@ source ../dev.env
 ```sh
 yarn dev
 ```
+
+## Docker
+
+### Not Tested yet
