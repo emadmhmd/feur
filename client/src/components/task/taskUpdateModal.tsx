@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-no-bind */
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
@@ -10,7 +11,7 @@ import { taskAction } from '../../state/actions';
 import { taskType } from '../../types/domain';
 
 interface IProps {
-  update: any,
+  update(id: string, task: taskType): void,
   oldTask: taskType,
 }
 
@@ -36,9 +37,8 @@ function TaskUpdateModal({
     // validateOnChange: false,
     // validateOnBlur: false,
     onSubmit: async (values: taskType) => {
-      await update(oldTask.id, { ...values });
+      await update(oldTask.id as string, { ...values });
       toggle();
-      // setPicture('');
     },
   });
 

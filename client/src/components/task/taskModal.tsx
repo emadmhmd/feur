@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-no-bind */
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
@@ -14,7 +15,7 @@ const initialValues: taskType = {
 };
 
 interface IProps {
-  create: any,
+  create(task: taskType): void,
 }
 
 function TaskModal({

@@ -19,7 +19,7 @@ const initialValues: userType = {
 };
 
 interface PropsType {
-    signUp: any,
+  signUp(user: userType): void,
 }
 
 function SignUpModal({

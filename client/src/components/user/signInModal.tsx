@@ -16,7 +16,7 @@ const initialValues: userType = {
 };
 
 interface IProps {
-    signIn: any,
+    signIn(user: userType): void,
 }
 
 function SignUpModal({
