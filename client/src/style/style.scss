@@ -1,5 +1,5 @@
-$color:#282c34;
-$sec-color: #fff;
+$color:#fff;
+$sec-color: #282c34;
 
 /* Framework Part */
 
@@ -30,6 +30,7 @@ body {
 .header .title{
   float: left;
   width: 60%;
+  font-weight: bolder;
 }
 .header .nav {
   float: left;
@@ -41,4 +42,25 @@ body {
   margin-left: 30%;
   text-align: center;
   margin-top: 20px;
+}
+
+.taskList {
+  width: 80%;
+  margin-left: 10%;
+  text-align: center;
+}
+
+.listHeader {
+  margin-top: 150px;
+  overflow: hidden;
+}
+
+.listBtn {
+  float: right;
+  margin-bottom: 25px;
+}
+
+.listTitle {
+  float: left;
+  margin-bottom: 25px;
 }

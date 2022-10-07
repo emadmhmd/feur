@@ -39,13 +39,12 @@ function TaskModal({
     onSubmit: async (values: taskType) => {
       await create({ ...values });
       toggle();
-      // setPicture('');
     },
   });
 
   return (
     <div>
-      <Button onClick={toggle} className="btn">Create Task</Button>
+      <Button onClick={toggle} className="listBtn">Create Task</Button>
       <Modal isOpen={modal} toggle={toggle}>
         <ModalHeader toggle={toggle}>Create new task</ModalHeader>
         <ModalBody>

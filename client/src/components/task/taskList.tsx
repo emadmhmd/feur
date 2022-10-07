@@ -1,7 +1,7 @@
-/* eslint-disable react/jsx-no-bind */
+/* eslint-disable no-unused-vars */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { Button } from 'reactstrap';
+import { Button, ButtonGroup, Table } from 'reactstrap';
 import { taskAction } from '../../state/actions';
 import { taskType } from '../../types/domain';
 import storeType from '../../types/state';
@@ -9,29 +9,40 @@ import TaskModal from './taskModal';
 import TaskUpdateModal from './taskUpdateModal';
 
 type PropsType = {
-  getAll: any,
+  getAll(): void,
   tasks: Array<taskType>,
-  deleteAction: any,
+  deleteTask(id: string): void,
 }
-function TaskList({ getAll, tasks, deleteAction }: PropsType) {
+
+function TaskList({ getAll, tasks, deleteTask }: PropsType) {
   useEffect(() => {
     getAll();
-  }, []);
+  }, [getAll]);
 
-  async function deleteTask(id: string) {
-    await deleteAction(id);
+  async function deleteTaskById(id: string) {
+    await deleteTask(id);
   }
   return (
-    <div>
-      <h1 className="">Task List </h1>
-      <TaskModal />
-      {tasks?.map((task: taskType) => (
-        <div key={task.id}>
-          <p>{task.task}</p>
-          <TaskUpdateModal oldTask={task} />
-          <Button onClick={() => deleteTask(task.id as string)}>Delete</Button>
-        </div>
-      ))}
+    <div className="taskList">
+      <div className="listHeader">
+        <h2 className="listTitle">Task List </h2>
+        <TaskModal />
+      </div>
+      <Table striped bordered hover variant="dark">
+        <tbody>
+          {tasks?.map((task: taskType) => (
+            <tr key={task.id}>
+              <td>{task.task}</td>
+              <td>
+                <ButtonGroup>
+                  <TaskUpdateModal oldTask={task} />
+                  <Button onClick={() => deleteTaskById(task.id as string)}>Delete</Button>
+                </ButtonGroup>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
     </div>
   );
 }
